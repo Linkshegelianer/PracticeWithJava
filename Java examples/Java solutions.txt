@@ -1,0 +1,459 @@
+public static void welcomeUserByName() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Как вас зовут?");
+        String name = scanner.next();
+        printCity();
+        String city = scanner.next();
+        System.out.println("Рад познакомиться, " + name + " из " + city + "!");
+    } - РАБОТА СО СКАННЕРОМ
+
+
+
+
+System.out.println();
+text.charAt(text.length() - 1) последняя буква строки ИЛИ ВЫЧИТАТЬ НОЛЬ
+
+name.substring(1, name.length()) - возвращает целочисленную длинную строки
+
+
+var number = Integer.parseInt("345"); явное преобразование типов
+var result = (int) 5.1; преобразование примитивных типов
+var newEmoji = emoji.replace('(', ')'); использование метода replace() в случае символов + "google".replace("go", "mo"); в случае элементов строки
+
+Куда ставить \n:
+var trimmedText = text.trim();
+        var result = "First: "
+            + trimmedText.charAt(0)
+            + "\nLast: "
+            + trimmedText.charAt(trimmedText.length() - 1);
+
+        System.out.println(result);
+
+Ещё вариант:
+        var finalText = text.trim();
+        System.out.println("First: " + finalText.charAt(0) + "\nLast: " + finalText.charAt(finalText.length() - 1));
+
+System.out.println((int) (Math.random() * 10)); рандомное число от 0 до 10
+
+Метод проверки чётности:
+public static boolean isEven(int number) {
+    return number % 2 == 0;
+}
+
+
+Рассчитать количество дней между двумя датами:
+// С даты
+
+LocalDate dateFrom = LocalDate.of(2017, Month.MAY, 24);
+
+// По дату
+
+LocalDate dateTo = LocalDate.of(2017, Month.JULY, 29);
+
+// Количество дней между этими датами
+
+long noOfDaysBetween = ChronoUnit.DAYS.between(dateFrom, dateTo);
+
+System.out.println(noOfDaysBetween);
+
+
+
+Имплементация метода:
+public class App {
+    public static void printMotto() {
+        System.out.println("Winter is coming");
+    }
+    public static void main(String[] args) {
+    App.printMotto();
+    }
+}
+
+Перегруженный метод: 
+class App {
+    public static int sum(int x) {
+        return x + 10;
+    }
+}
+
+App.sum(2); // 12
+App.sum(2, 1); // 3
+
+Метод с boolean:
+public class App {
+    public static boolean isPalindrome(String string) {
+        var string2 = StringUtils.reverse(string);
+        return string.equalsIgnoreCase(string2);
+    }
+}
+
+public class App {
+    public static boolean isInternationalPhone(String number) {
+    return number.charAt(0) == '+';
+    }
+}
+
+public class App {
+    public static boolean isLeapYear(int year) {
+        return year % 400 == 0 || (year % 4 == 0 && year % 10 != 0);
+    }
+}
+
+Переданная дата не сегодняшнее число:
+import java.time.LocalDate;
+
+public class App {
+    public static boolean notToday(String dateAsString) {
+        var date = LocalDate.now().toString();
+        return !dateAsString.equals(date.toString());
+    }
+}
+
+Проверка на капс:
+public class App {
+    public static String getSentenceTone(String sentence) {
+        if (sentence.toUpperCase().equals(sentence)) {
+            return "scream";
+        }
+        return "normal";
+    }
+}
+
+Нормализация url-адреса:
+public class App {
+    // BEGIN (write your solution here)
+    public static String normalizeUrl(String adress) {
+        if (adress.startsWith("https://")) {
+            return adress;
+        } else { 
+            return "https://" + adress;
+        }
+    }
+}
+
+Определение принадлежности к группы через if - else if:
+public class App {
+    public static String whoIsThisHouseToStarks(String group) {
+        if (group.equals("Karstark") || group.equals("Tally")) {
+            return "friend";
+        } else if (group.equals("Lannister") || group.equals("Frey")) {
+            return "enemy";
+        } else {
+            return "neutral";
+        }
+    }
+}
+
+Программа принимает на вход строку, и, если первая буква не заглавная, возвращает перевернутый вариант исходной строки. Если первая буква заглавная, то строка возвращается без изменений. Если на вход передана пустая строка, то метод возвращает пустую строку (второе условие через тернарный оператор):
+import org.apache.commons.lang3.StringUtils;
+
+public class App {
+    public static String convertString(String str) {
+        if (str.equals("")) {
+            return "";
+        } 
+        return Character.isUpperCase(str.charAt(0)) ? str : StringUtils.reverse(str);
+    }
+    // END
+}
+
+Тема по switch-case STRING ВЫДАЁТ ПРИНИМАЕТ INT:
+public class App {
+    public static String getNumberExplanation(int number) {
+        switch (number) {
+            case 666:
+                return "devil number";
+            case 7:
+                return "prime number";
+            case 42:
+                return "answer for everything";
+            default:
+                return null;
+        }
+    }
+}
+
+Метод выводит числа в обратном порядке через цикл:
+public class App {
+    public static void printNumbers(int firstNumber) {
+        var i = firstNumber;
+        while (i >= 1) {
+            System.out.println(i);
+            i = i - 1;
+        }
+        System.out.println("finished!");
+    }
+}
+
+Перемножает числа в диапазоне:
+public static int multiplyNumbersFromRange(int start, int finish) {
+    var i = start;
+    var multiply = 1;
+    while (i <= finish) {
+        multiply *= i;
+        i += 1;
+    }
+    return multiply;
+};
+
+App.multiplyNumbersFromRange(3, 5); // 60
+
+Метод перемножает числа в указанном диапазоне включая границы диапазона:
+public class App {
+    public static int multiplyNumbersFromRange(int start, int finish) {
+        var i = start;
+        var result = 1;
+
+        while (i <= finish) {
+          result = result * i;
+          i = i + 1;
+        }
+
+        return result;
+    }
+}
+
+Метод объединяет все числа из диапазона в строку:
+public class App {
+    public static String joinNumbersFromRange(int start, int finish) {
+        // BEGIN
+        var i = start;
+        var result = "";
+
+        while (i <= finish) {
+            result = result + i;
+            i = i + 1;
+        }
+
+        return result;
+        // END
+    }
+}
+
+Метод считает количество букв в слове:
+public static int countChars(String str, char ch) {
+    var i = 0;
+    var count = 0;
+    while (i < str.length()) {
+        if (str.charAt(i) == ch) {
+            // Считаем только подходящие символы
+            count = count + 1;
+        }
+        // Счётчик увеличивается в любом случае
+        i = i + 1;
+    }
+
+    return count;
+}
+
+Метод принимает в качестве параметра строку и возвращает количество больших символов в строке:
+public static int bigLettersCount(String text) {
+        var result = 0;
+
+        for (var i = 0; i < text.length(); i++) {
+            var current = text.charAt(i);
+            if (Character.toUpperCase(current) == current) {
+                result += 1;
+            }
+        }
+
+        return result;
+    }
+
+Проверка числа на простоту:
+public static boolean isPrime(int number) {
+    if (number < 2) {
+        return false;
+    }
+
+    var divider = 2;
+
+    while (divider <= number / 2) {
+        if (number % divider == 0) {
+            return false;
+        }
+
+        divider += 1;
+    }
+
+    return true;
+}
+
+
+
+Статический метод, который печатает переданное слово посимвольно в обратном порядке:
+public class App {
+    public static void printReversedNameBySymbol(String name) {
+        var i = name.length() - 1;
+        while (i >= 0) {
+            System.out.println(name.charAt(i));
+            i = i - 1;
+        }
+    }
+}
+
+
+Реализация метода, который считает количество конкретных символов в строке без учёта регистра букв:
+public class App {
+    public static int countChars(String str, char ch) {
+        // BEGIN
+        var i = 0;
+        var count = 0;
+        while (i < str.length()) {
+            var currentChar = Character.toLowerCase(str.charAt(i));
+            if (currentChar == Character.toLowerCase(ch)) {
+                count = count + 1;
+            }
+            i = i + 1;
+        }
+
+        return count;
+        // END
+    }
+}
+
+Переворот строки 1: 
+public static String reverse(String str) {
+    var i = 0;
+    // Нейтральный элемент для строк это пустая строка
+    var result = "";
+    while (i < str.length()) {
+        // Соединяем в обратном порядке
+        result = str.charAt(i) + result;
+        i = i + 1;
+    }
+
+    return result;
+}
+
+Переворот строки 2 (обход строки не с первого элемента по последний, а наоборот):
+public class App {
+    public static String reverse(String str) {
+        var i = str.length() - 1;
+        var result = "";
+        while (i >= 0) {
+            result = result + str.charAt(i);
+            i = i - 1;
+        }
+
+        return result;
+    }
+}
+
+Метод, принимающий на вход строку и символ, и возвращающий новую строку, в которой удалён переданный символ во всех его позициях:
+public class App {
+    public static String filterString(String str, char ch) {
+        var i = 0;
+        var result = "";
+        while (i < str.length()) {
+            var currentChar = str.charAt(i);
+            if (currentChar != ch) {
+                result += currentChar;
+            }
+            i += 1;
+        }
+
+        return result;
+    }
+}
+
+Метод шифрует сообщения по следующему алгоритму: берёт текст и переставляет в нём каждые два подряд идущих символа. Если кол-во символов нечётное, то последний символ остаётся на своём месте: 
+public class App {
+    public static String encrypt(String str) {
+        // BEGIN (write your solution here)
+        var result = "";
+        for (var i = 0; i < str.length(); i += 2) {
+            var nextSymbol = (i + 2 > str.length()) ? "" : str.substring(i + 1, i + 2);
+            result = result + nextSymbol + str.charAt(i);
+        }
+
+        return result;
+
+Метод принимает на вход строку и возвращает её копию, у которой каждый n-ный элемент переведён в верхний регистр:
+public class App {
+    public static String makeItFunny(String str, int n) {
+        // BEGIN
+        var i = 0;
+        var result = "";
+        while (i < str.length()) {
+            var current = str.charAt(i);
+            if ((i + 1) % n == 0) {
+                result = result + Character.toUpperCase(current);
+            } else {
+                result = result + current;
+            }
+        i++;
+    }
+
+    return result;
+    // END
+}
+}
+
+Метод проверяет (с учётом регистра), содержит ли строка указанную букву:
+public class App {
+    public static boolean hasChar(String str, char ch) {
+        // BEGIN
+        var i = 0;
+        while (i < str.length()) {
+            if (str.charAt(i) == ch) {
+                return true;
+            }
+
+            i += 1;
+        }
+
+        return false;
+        // END
+    }
+}
+
+
+Последнее задание про отсылку к классу и пакетам:
+// BEGIN (write your solution here)
+import io.hexlet.counter.Counter;
+// END
+
+public class App {
+    // BEGIN (write your solution here)
+    public static boolean greaterThan(String text1, String text2) {
+        return Counter.bigLettersCount(text1) > Counter.bigLettersCount(text2);
+    }
+    // END
+}
+
+Counter
+// BEGIN (write your solution here)
+package io.hexlet.counter;
+// END
+
+public class Counter {
+    // BEGIN (write your solution here)
+    public static int bigLettersCount(String text) {
+        var result = 0;
+
+        for (var i = 0; i < text.length(); i++) {
+            var current = text.charAt(i);
+            if (Character.toUpperCase(current) == current) {
+                result += 1;
+            }
+        }
+
+        return result;
+    }
+    // END
+}
+
+Работа с массивами, тут выдаёт содержимое в зависимости от введённого значения:
+public static String[] getWeekends(String format) {
+        String[] longFormats = {"saturday", "sunday"};
+        String[] shortFormats = {"sat", "sun"};
+
+        switch (format) {
+            case "long":
+                return longFormats;
+            case "short":
+                return shortFormats;
+            default:
+                return longFormats;
+        }
+    }
