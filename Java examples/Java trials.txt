@@ -1,5 +1,5 @@
-Проверяет, является ли число степенью тройки:
-public class App {
+Метод проверяет, является ли число степенью тройки:
+public class PowerOfThree {
     public static Boolean isPowerOfThree(int number) {
         for (int x = 1; x <= number; x = x * 3) // или x *= 3
         {
