@@ -39,3 +39,32 @@ public class App {
         }
     }
 }
+
+Переворот строки 1: 
+public static String reverse(String str) {
+    var i = 0;
+    // Нейтральный элемент для строк это пустая строка
+    var result = "";
+    while (i < str.length()) {
+        // Соединяем в обратном порядке
+        result = str.charAt(i) + result;
+        i = i + 1;
+    }
+
+    return result;
+}
+
+
+Переворот строки 2 (обход строки не с первого элемента по последний, а наоборот):
+public class App {
+    public static String reverse(String str) {
+        var i = str.length() - 1;
+        var result = "";
+        while (i >= 0) {
+            result = result + str.charAt(i);
+            i = i - 1;
+        }
+
+        return result;
+    }
+}
