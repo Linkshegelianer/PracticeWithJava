@@ -8,3 +8,34 @@ public class PowerOfThree {
         return false;
     }
 }
+
+Проверка числа на простоту:
+public static boolean isPrime(int number) {
+    if (number < 2) {
+        return false;
+    }
+
+    var divider = 2;
+
+    while (divider <= number / 2) {
+        if (number % divider == 0) {
+            return false;
+        }
+
+        divider += 1;
+    }
+
+    return true;
+}
+
+
+Статический метод, который печатает переданное слово посимвольно в обратном порядке:
+public class App {
+    public static void printReversedNameBySymbol(String name) {
+        var i = name.length() - 1;
+        while (i >= 0) {
+            System.out.println(name.charAt(i));
+            i = i - 1;
+        }
+    }
+}
