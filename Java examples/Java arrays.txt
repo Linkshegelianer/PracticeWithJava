@@ -1,7 +1,5 @@
-
 Метод берёт массив и переставляет первый и последний символ местами (если символов 2, то возвращает тот же массив):
 class App {
-    // BEGIN (write your solution here)
     public static void swap(int[] numbers) {
         var length = numbers.length;
 
@@ -15,5 +13,4 @@ class App {
         numbers[lastIndex] = numbers[0];
         numbers[0] = temp;
     }
-    // END
 }
