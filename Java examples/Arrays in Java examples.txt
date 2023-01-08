@@ -1,0 +1,45 @@
+Swaping first and last index in an array:
+
+public static void swap(int[] numbers) {
+        var length = numbers.length;
+
+        if (length < 2) {
+            return;
+        }
+
+        var lastIndex = length - 1;
+
+        var temp = numbers[lastIndex];
+        numbers[lastIndex] = numbers[0];
+        numbers[0] = temp;
+    }
+
+Creating new array with modified Strings:
+public static String[] addPrefix(String[] names, String prefix) {
+    	var length = names.length;
+    	String[] namesWithPrefix = new String[length];
+
+    	for (var i = 0; i < length; i++) {
+        	namesWithPrefix[i] = prefix + " " + names[i];
+    	}
+
+    	return namesWithPrefix;
+	}
+
+Finding max value amont integers:
+public static Integer calculateMax(int[] numbers) {
+      if (numbers.length == 0) {
+            return null;
+        }
+
+      var max = numbers[0];
+      
+      for (var i = 1; i < numbers.length; i++) {
+            var currentElement = numbers[i];
+            if (currentElement > max) {
+                max = currentElement;
+            }
+        }
+        return max;
+        } 
+   }
