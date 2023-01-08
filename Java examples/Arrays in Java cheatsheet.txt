@@ -1,0 +1,17 @@
+Creating new array: int[] numbers = new int[number of elements];
+Output to the screen: Arrays.toString(array)
+
+Get the last index: numbers[numbers.length - 1]
+
+Default values:
+- boolean : false
+- int : 0
+- double : 0.0
+- String : null
+
+Adding/removing elements: ArrayUtils.add(array, element)/ArrayUtils.remove(array, element)
+
+Using for:
+for (var i = 0; i < array.length; i++)
+From last element to first: var index = array.length - 1 - i;
+Or using reverse counter: for (var i = array.length - 1; i >=0; i--)
